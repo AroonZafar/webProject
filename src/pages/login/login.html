@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+form {
+    display: inline-block;
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 10px;
+}
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #e6b800;
+}
+.error {
+    color: red;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+<h1>Login Form</h1>
+<form onsubmit="return validateForm()">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <div id="error" class="error"></div>
+    <button type="submit">Login</button>
+</form>
+<script>
+function validateForm() {
+    let user = document.getElementById('username').value;
+    let pass = document.getElementById('password').value;
+    let error = document.getElementById('error');
+    if(user === "" || pass === "") {
+        error.textContent = "All fields are required!";
+        return false;
+    }
+    return true;
+}
+</script>
+</body>
+</html>

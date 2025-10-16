@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog</title>
+<style>
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-gap: 10px;
+    padding: 20px;
+}
+.header { grid-area: header; background:#1f1f1f; text-align:center; padding:20px; }
+.sidebar { grid-area: sidebar; background:#2a2a2a; padding:20px; }
+.main { grid-area: main; background:#1f1f1f; padding:20px; }
+.footer { grid-area: footer; background:#1f1f1f; text-align:center; padding:10px; }
+</style>
+</head>
+<body>
+<div class="grid-container">
+    <div class="header"><h1>Car Blog</h1></div>
+    <div class="sidebar">
+        <h3>Categories</h3>
+        <p>Supercars</p>
+        <p>Luxury</p>
+        <p>Sports</p>
+    </div>
+    <div class="main">
+        <h2>Maserati MC20 Review</h2>
+        <p>The MC20 is Maserati’s first new supercar in decades...</p>
+    </div>
+    <div class="footer">
+        <p>© 2025 CarHub Blog</p>
+    </div>
+</div>
+</body>
+</html>

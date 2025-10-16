@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maserati MC20</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f1f1f;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin-left: 20px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        ul li a:hover {
+            color: #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .image-section img {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.2);
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+            background-color: #1c1c1c;
+            border-radius: 20px;
+            margin: 20px auto;
+            width: 80%;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #1f1f1f;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            ul li {
+                margin: 10px 0;
+            }
+
+            .image-section img {
+                width: 95%;
+            }
+
+            .content {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CarHub</div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./src/pages/about/about.html">About</a></li>
+            <li><a href="./src/pages/contacts/contact.html">Contact</a></li>
+            <li><a href="./src/pages/blog/blog.html">Blog</a></li>
+            <li><a href="./src/pages/login/login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Maserati MC20</h1>
+        <p>Unleash Italian power, beauty, and innovation in motion.</p>
+    </header>
+
+    <div class="image-section">
+        <img src="assets/images/hq720.jpg" alt="Maserati MC20">
+    </div>
+
+    <div class="content">
+        <h2>About Maserati MC20</h2>
+        <p>
+            The Maserati MC20 is a supercar that marks Maserati’s bold return to performance.
+            With a twin-turbo V6 engine producing 621 horsepower, the MC20 accelerates from
+            0 to 100 km/h in under 3 seconds. Built with a lightweight carbon-fiber frame, 
+            it offers both racing precision and everyday comfort.
+        </p>
+    </div>
+
+
+    <footer>
+        <p>© 2025 Maserati Showcase | <a href="login.html">Login</a></p>
+         <p>Follow us:
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a>
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 40px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contact Us</h1>
+    <form    action="https://formspree.io/f/xblzavop"
+  method="POST">
+        <label>First Name:</label>
+        <input type="text" name="first_name" required><br>
+
+        <label>Last Name:</label>
+        <input type="text" name="last_name" required><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label>Message:</label><br>
+        <textarea name="message" rows="4" cols="40" required></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
