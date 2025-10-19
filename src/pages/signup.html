@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | UpSillU</title>
+  <title>Sign Up | UpSillU</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
   <style>
     .form-container {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -34,9 +33,14 @@
 
 <div class="flex items-center justify-center min-h-screen">
   <div class="form-container w-full max-w-md bg-gray-800 shadow-lg rounded-lg p-8 space-y-6 border border-gray-700">
-    <h2 class="text-3xl font-bold text-center text-blue-500">Sign In</h2>
+    <h2 class="text-3xl font-bold text-center text-blue-500">Create Account</h2>
 
     <form class="space-y-4">
+      <div>
+        <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Full Name</label>
+        <input type="text" id="name" class="input-hover w-full bg-gray-700 border border-gray-600 text-gray-100 p-3 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe" required>
+      </div>
+
       <div>
         <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Email</label>
         <input type="email" id="email" class="input-hover w-full bg-gray-700 border border-gray-600 text-gray-100 p-3 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="example@email.com" required>
@@ -44,22 +48,4 @@
 
       <div>
         <label for="password" class="block mb-2 text-sm font-medium text-gray-300">Password</label>
-        <input type="password" id="password" class="input-hover w-full bg-gray-700 border border-gray-600 text-gray-100 p-3 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="********" required>
-      </div>
-
-      <button type="submit" class="btn-float w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition shadow-lg">Login</button>
-    </form>
-
-    <p class="text-center text-gray-400">
-      Don't have an account?
-      <a href="../signup.html" class="text-blue-500 font-medium hover:underline">Sign up</a>
-    </p>
-    
-    <p class="text-center">
-      <a href="../../../index.html" class="text-gray-400 hover:text-blue-500 text-sm transition">← Back to Home</a>
-    </p>
-  </div>
-</div>
-
-</body>
-</html>
+        <input type="password" id="password" class="input-hover w-full bg-gray-700 border border-gray-600 text-gray

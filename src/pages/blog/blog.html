@@ -1,47 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog</title>
-<style>
-body {
-    background-color: #121212;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-}
-.grid-container {
-    display: grid;
-    grid-template-areas:
-        "header header header"
-        "sidebar main main"
-        "footer footer footer";
-    grid-gap: 10px;
-    padding: 20px;
-}
-.header { grid-area: header; background:#1f1f1f; text-align:center; padding:20px; }
-.sidebar { grid-area: sidebar; background:#2a2a2a; padding:20px; }
-.main { grid-area: main; background:#1f1f1f; padding:20px; }
-.footer { grid-area: footer; background:#1f1f1f; text-align:center; padding:10px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | UpSillU</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .float-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .float-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+    }
+    .nav-link {
+      transition: transform 0.2s ease;
+    }
+    .nav-link:hover {
+      transform: translateY(-2px);
+    }
+    .blog-image {
+      transition: transform 0.3s ease;
+    }
+    .float-hover:hover .blog-image {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body>
-<div class="grid-container">
-    <div class="header"><h1>Car Blog</h1></div>
-    <div class="sidebar">
-        <h3>Categories</h3>
-        <p>Supercars</p>
-        <p>Luxury</p>
-        <p>Sports</p>
+<body class="bg-gray-900 text-gray-100">
+
+<!-- Navbar -->
+<nav class="bg-gray-800 shadow-lg p-4 flex justify-between border-b border-gray-700">
+  <a href="../../../index.html" class="text-2xl font-bold text-blue-500">UpSillU</a>
+  <div class="space-x-6">
+    <a href="../../../index.html" class="nav-link text-gray-300 hover:text-blue-500">Home</a>
+    <a href="../about/about.html" class="nav-link text-gray-300 hover:text-blue-500">About</a>
+    <a href="../contacts/contact.html" class="nav-link text-gray-300 hover:text-blue-500">Contact</a>
+    <a href="blog.html" class="nav-link text-blue-500">Blog</a>
+  </div>
+</nav>
+
+<div class="pt-16"></div>
+
+<!-- Blog Section -->
+<section class="max-w-6xl mx-auto py-12 px-6">
+  <h2 class="text-3xl font-bold text-center mb-10 text-blue-500">Latest Articles</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="float-hover bg-gray-800 shadow-lg rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+      <div class="overflow-hidden">
+        <img src="../../assets/images/hq720.jpg" class="blog-image w-full h-48 object-cover" alt="Blog Image">
+      </div>
+      <div class="p-6">
+        <h3 class="font-semibold text-xl mb-2 text-blue-400">5 Tips to Stay Motivated While Learning</h3>
+        <p class="text-gray-400">Learn how to keep your motivation strong during online courses.</p>
+        <a href="#" class="text-blue-500 font-medium mt-3 inline-block hover:text-blue-400">Read More →</a>
+      </div>
     </div>
-    <div class="main">
-        <h2>Maserati MC20 Review</h2>
-        <p>The MC20 is Maserati’s first new supercar in decades...</p>
+
+    <div class="float-hover bg-gray-800 shadow-lg rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+      <div class="overflow-hidden">
+        <img src="../../assets/images/hq720.jpg" class="blog-image w-full h-48 object-cover" alt="Blog Image">
+      </div>
+      <div class="p-6">
+        <h3 class="font-semibold text-xl mb-2 text-blue-400">Balancing Study and Work</h3>
+        <p class="text-gray-400">Practical ways to manage your studies with a full-time job.</p>
+        <a href="#" class="text-blue-500 font-medium mt-3 inline-block hover:text-blue-400">Read More →</a>
+      </div>
     </div>
-    <div class="footer">
-        <p>© 2025 CarHub Blog</p>
+
+    <div class="float-hover bg-gray-800 shadow-lg rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+      <div class="overflow-hidden">
+        <img src="../../assets/images/hq720.jpg" class="blog-image w-full h-48 object-cover" alt="Blog Image">
+      </div>
+      <div class="p-6">
+        <h3 class="font-semibold text-xl mb-2 text-blue-400">Why Feedback is Key to Learning</h3>
+        <p class="text-gray-400">Understand the importance of feedback in the learning process.</p>
+        <a href="#" class="text-blue-500 font-medium mt-3 inline-block hover:text-blue-400">Read More →</a>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-950 text-gray-400 py-6 text-center border-t border-gray-800">
+  <p>© 2025 UpSillU. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
