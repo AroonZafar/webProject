@@ -1,91 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | UpSillU</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .float-hover {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .float-hover:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
-    }
-    .nav-link {
-      transition: transform 0.2s ease;
-    }
-    .nav-link:hover {
-      transform: translateY(-2px);
-    }
-    .blog-image {
-      transition: transform 0.3s ease;
-    }
-    .float-hover:hover .blog-image {
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body class="bg-gray-900 text-gray-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses — Blog | UpSkillU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .float-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .float-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 36px rgba(59, 130, 246, 0.18);
+      }
+      .modal-backdrop {
+        background: rgba(0,0,0,0.6);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-100 min-h-screen">
 
-<!-- Navbar -->
-<nav class="bg-gray-800 shadow-lg p-4 flex justify-between border-b border-gray-700">
-  <a href="../../../index.html" class="text-2xl font-bold text-blue-500">UpSillU</a>
-  <div class="space-x-6">
-    <a href="../../../index.html" class="nav-link text-gray-300 hover:text-blue-500">Home</a>
-    <a href="../about/about.html" class="nav-link text-gray-300 hover:text-blue-500">About</a>
-    <a href="../contacts/contact.html" class="nav-link text-gray-300 hover:text-blue-500">Contact</a>
-    <a href="blog.html" class="nav-link text-blue-500">Blog</a>
-  </div>
-</nav>
-
-<div class="pt-16"></div>
-
-<!-- Blog Section -->
-<section class="max-w-6xl mx-auto py-12 px-6">
-  <h2 class="text-3xl font-bold text-center mb-10 text-blue-500">Latest Articles</h2>
-
-  <div class="grid md:grid-cols-3 gap-8">
-    <div class="float-hover bg-gray-800 shadow-lg rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition cursor-pointer">
-      <div class="overflow-hidden">
-        <img src="../../assets/images/hq720.jpg" class="blog-image w-full h-48 object-cover" alt="Blog Image">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 shadow-lg p-4 flex justify-between border-b border-gray-700 fixed w-full z-20">
+      <a href="../../../index.html" class="text-2xl font-bold text-blue-500">UpSkillU</a>
+      <div class="space-x-6">
+        <a href="../../../index.html" class="nav-link text-gray-300 hover:text-blue-500">Home</a>
+        <a href="../about/about.html" class="nav-link text-gray-300 hover:text-blue-500">About</a>
+        <a href="../contacts/contact.html" class="nav-link text-gray-300 hover:text-blue-500">Contact</a>
+        <a href="blog.html" class="nav-link text-blue-500">Blog</a>
       </div>
-      <div class="p-6">
-        <h3 class="font-semibold text-xl mb-2 text-blue-400">5 Tips to Stay Motivated While Learning</h3>
-        <p class="text-gray-400">Learn how to keep your motivation strong during online courses.</p>
-        <a href="#" class="text-blue-500 font-medium mt-3 inline-block hover:text-blue-400">Read More →</a>
+    </nav>
+
+    <div class="pt-20"></div>
+
+    <main class="max-w-6xl mx-auto py-8 px-4">
+      <h1 class="text-3xl font-bold text-center mb-6 text-blue-400">Courses</h1>
+
+      <!-- Controls: Add form + Search + Filters -->
+      <div class="grid md:grid-cols-4 gap-6 mb-8">
+        <div class="md:col-span-1 bg-gray-800 rounded-lg p-6 border border-gray-700">
+          <h2 class="text-xl font-semibold mb-4 text-blue-300">Add New Course</h2>
+          <form id="addForm" class="space-y-3">
+            <div>
+              <label class="text-sm text-gray-300">Title</label>
+              <input required name="title" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700" placeholder="Course title" />
+            </div>
+            <div>
+              <label class="text-sm text-gray-300">Instructor</label>
+              <input required name="instructor" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700" placeholder="Instructor name" />
+            </div>
+            <div>
+              <label class="text-sm text-gray-300">Duration</label>
+              <input name="duration" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700" placeholder="e.g. 4 Weeks" />
+            </div>
+            <div>
+              <label class="text-sm text-gray-300">Category</label>
+              <input name="category" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700" placeholder="Programming / Design" />
+            </div>
+            <div>
+              <label class="text-sm text-gray-300">Level</label>
+              <select name="level" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700">
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+            <div class="flex gap-2">
+              <button type="submit" class="mt-2 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">Add</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="md:col-span-3 bg-gray-800 rounded-lg p-6 border border-gray-700">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div class="flex items-center gap-3 w-full md:w-1/2">
+              <input id="search" type="search" placeholder="Search by title or instructor..." class="w-full p-2 rounded bg-gray-900 border border-gray-700" />
+              <button id="clearFilters" class="bg-gray-700 hover:bg-gray-600 px-3 py-2 rounded text-sm">Clear</button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 w-full md:w-1/2">
+              <select id="filterCategory" class="p-2 rounded bg-gray-900 border border-gray-700">
+                <option value="">All Categories</option>
+              </select>
+              <select id="filterInstructor" class="p-2 rounded bg-gray-900 border border-gray-700">
+                <option value="">All Instructors</option>
+              </select>
+              <select id="filterDuration" class="p-2 rounded bg-gray-900 border border-gray-700">
+                <option value="">All Durations</option>
+              </select>
+              <select id="filterLevel" class="p-2 rounded bg-gray-900 border border-gray-700">
+                <option value="">All Levels</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="courseContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="hidden fixed inset-0 flex items-center justify-center z-30">
+      <div class="modal-backdrop absolute inset-0"></div>
+      <div class="relative bg-gray-800 rounded-lg p-6 w-full max-w-lg border border-gray-700 z-40">
+        <h3 class="text-xl font-semibold mb-4 text-blue-300">Edit Course</h3>
+        <form id="editForm" class="space-y-3">
+          <input type="hidden" name="id" />
+          <div>
+            <label class="text-sm text-gray-300">Title</label>
+            <input name="title" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300">Instructor</label>
+            <input name="instructor" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700" />
+          </div>
+          <div class="flex gap-2">
+            <div class="w-1/2">
+              <label class="text-sm text-gray-300">Duration</label>
+              <input name="duration" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700" />
+            </div>
+            <div class="w-1/2">
+              <label class="text-sm text-gray-300">Category</label>
+              <input name="category" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700" />
+            </div>
+          </div>
+          <div>
+            <label class="text-sm text-gray-300">Level</label>
+            <select name="level" class="w-full mt-1 p-2 rounded bg-gray-900 border border-gray-700">
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </div>
+          <div class="flex justify-end gap-2 mt-2">
+            <button type="button" id="cancelEdit" class="px-4 py-2 rounded bg-gray-700">Cancel</button>
+            <button type="submit" class="px-4 py-2 rounded bg-blue-500 text-white">Update</button>
+          </div>
+        </form>
       </div>
     </div>
 
-    <div class="float-hover bg-gray-800 shadow-lg rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition cursor-pointer">
-      <div class="overflow-hidden">
-        <img src="../../assets/images/hq720.jpg" class="blog-image w-full h-48 object-cover" alt="Blog Image">
-      </div>
-      <div class="p-6">
-        <h3 class="font-semibold text-xl mb-2 text-blue-400">Balancing Study and Work</h3>
-        <p class="text-gray-400">Practical ways to manage your studies with a full-time job.</p>
-        <a href="#" class="text-blue-500 font-medium mt-3 inline-block hover:text-blue-400">Read More →</a>
-      </div>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-6 text-center border-t border-gray-800 mt-12">
+      <p>© 2025 UpSkillU. All rights reserved.</p>
+    </footer>
 
-    <div class="float-hover bg-gray-800 shadow-lg rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition cursor-pointer">
-      <div class="overflow-hidden">
-        <img src="../../assets/images/hq720.jpg" class="blog-image w-full h-48 object-cover" alt="Blog Image">
-      </div>
-      <div class="p-6">
-        <h3 class="font-semibold text-xl mb-2 text-blue-400">Why Feedback is Key to Learning</h3>
-        <p class="text-gray-400">Understand the importance of feedback in the learning process.</p>
-        <a href="#" class="text-blue-500 font-medium mt-3 inline-block hover:text-blue-400">Read More →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-950 text-gray-400 py-6 text-center border-t border-gray-800">
-  <p>© 2025 UpSillU. All rights reserved.</p>
-</footer>
-
-</body>
+    <script src="index.js" defer></script>
+  </body>
 </html>
