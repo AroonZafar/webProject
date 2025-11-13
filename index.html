@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UpSkillU | Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  
-  <script src="./"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script src="./theme.js" defer></script>
+  <link rel="icon" type="image/png" href="/assets/images/logo.jpg">
   <style>
     .float-hover {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -40,13 +39,14 @@
     <a href="index.html" class="flex items-center space-x-3">
       <span class="self-center text-2xl font-semibold text-blue-500">UpSkillU</span>
     </a>
-    <div class="hidden md:flex space-x-6">
+    <div class="hidden md:flex space-x-6 items-center">
       <a href="index.html" class="nav-link text-blue-500 font-medium">Home</a>
       <a href="src/pages/about/about.html" class="nav-link text-gray-300 hover:text-blue-500">About</a>
       <a href="src/pages/contacts/contact.html" class="nav-link text-gray-300 hover:text-blue-500">Contact</a>
       <a href="src/pages/blog/blog.html" class="nav-link text-gray-300 hover:text-blue-500">Blog</a>
       <a href="src/pages/signup.html" class="nav-link text-blue-500 font-semibold">Sign Up</a>
       <a href="src/pages/login/login.html" class="nav-link text-gray-300 hover:text-blue-500">Sign In</a>
+      <button id="themeToggle" class="ml-4 p-2 rounded hover:bg-gray-700 transition" title="Toggle theme">☀️</button>
     </div>
   </div>
 </nav>

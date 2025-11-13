@@ -1,11 +1,20 @@
 
+/*
+  CRUD for an array of course objects.
+  - Uses Array.map to render cards
+  - addForm pushes new course
+  - delete uses filter
+  - edit via modal and update
+  - search + 4 filters: category, instructor, duration, level
+*/
+
 let courses = [
   { id: 1, title: "JavaScript Basics", instructor: "Ali Khan", duration: "3 Weeks", category: "Programming", level: "Beginner" },
   { id: 2, title: "UI/UX Design", instructor: "Sara Malik", duration: "4 Weeks", category: "Design", level: "Intermediate" },
   { id: 3, title: "Flutter App Dev", instructor: "Ahsan Ahmed", duration: "6 Weeks", category: "App Development", level: "Advanced" },
 ];
 
-// DOM refs
+console.log("Courses loaded:", courses);
 const courseContainer = document.getElementById("courseContainer");
 const addForm = document.getElementById("addForm");
 const searchInput = document.getElementById("search");
@@ -135,6 +144,13 @@ cancelEdit.addEventListener('click', () => {
   editModal.classList.add('hidden');
 });
 
+// Close modal when clicking backdrop
+document.getElementById('editModal').addEventListener('click', (e) => {
+  if (e.target.id === 'editModal') {
+    editModal.classList.add('hidden');
+  }
+});
+
 // Update
 editForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -173,6 +189,13 @@ clearFilters.addEventListener('click', () => {
 // Initialize
 populateFilters();
 renderCourses();
+
+// Close modal when clicking backdrop
+document.getElementById('editModal').addEventListener('click', (e) => {
+  if (e.target.id === 'editModal') {
+    editModal.classList.add('hidden');
+  }
+});
 
 // Expose for debugging
 window._courses = courses;

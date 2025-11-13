@@ -4,7 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up | UpSkillU</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+    };
+  </script>
+
+  <!-- Theme script -->
+  <script src="/theme.js" defer></script>
+    <link rel="icon" type="image/png" href="/assets/images/logo.jpg">
+
+
   <style>
     .form-container {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -29,23 +42,74 @@
     }
   </style>
 </head>
-<body class="bg-gray-900">
 
-<div class="flex items-center justify-center min-h-screen">
-  <div class="form-container w-full max-w-md bg-gray-800 shadow-lg rounded-lg p-8 space-y-6 border border-gray-700">
-    <h2 class="text-3xl font-bold text-center text-blue-500">Create Account</h2>
+<body class="bg-gray-900 text-gray-100 light:bg-white light:text-gray-900">
 
-    <form class="space-y-4">
-      <div>
-        <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Full Name</label>
-        <input type="text" id="name" class="input-hover w-full bg-gray-700 border border-gray-600 text-gray-100 p-3 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe" required>
+  <!-- Navbar -->
+  <nav class="bg-gray-800 border-gray-700 shadow-lg fixed w-full z-20 top-0 left-0">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="../../index.html" class="flex items-center space-x-3">
+        <span class="self-center text-2xl font-semibold text-blue-500">UpSkillU</span>
+      </a>
+
+      <div class="hidden md:flex space-x-6 items-center">
+        <a href="../../index.html" class="text-gray-300 hover:text-blue-500">Home</a>
+        <a href="/src/pages/about/about.html" class="text-gray-300 hover:text-blue-500">About</a>
+        <a href="/src/pages/contacts/contact.html" class="text-gray-300 hover:text-blue-500">Contact</a>
+        <a href="/src/pages/blog/blog.html" class="text-gray-300 hover:text-blue-500">Blog</a>
+        <a href="/src/pages/login/login.html" class="text-gray-300 hover:text-blue-500">Sign In</a>
+
+        <!-- 🌗 Dark Mode Toggle Button -->
+        <button id="themeToggle" class="ml-4 p-2 rounded hover:bg-gray-700 transition" title="Toggle theme">☀️</button>
       </div>
+    </div>
+  </nav>
 
-      <div>
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Email</label>
-        <input type="email" id="email" class="input-hover w-full bg-gray-700 border border-gray-600 text-gray-100 p-3 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="example@email.com" required>
-      </div>
+  <div class="pt-24"></div>
 
-      <div>
-        <label for="password" class="block mb-2 text-sm font-medium text-gray-300">Password</label>
-        <input type="password" id="password" class="input-hover w-full bg-gray-700 border border-gray-600 text-gray
+  <!-- Sign Up Form -->
+  <div class="flex items-center justify-center min-h-screen px-4">
+    <div class="form-container w-full max-w-md bg-gray-800 light:bg-gray-100 shadow-lg rounded-lg p-8 space-y-6 border border-gray-700 light:border-gray-300">
+      <h2 class="text-3xl font-bold text-center text-blue-500">Create Account</h2>
+
+      <form class="space-y-4">
+        <!-- Full Name -->
+        <div>
+          <label for="name" class="block mb-2 text-sm font-medium text-gray-300 light:text-gray-700">Full Name</label>
+          <input type="text" id="name" class="input-hover w-full bg-gray-700 light:bg-white border border-gray-600 light:border-gray-300 text-gray-100 light:text-gray-900 p-3 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe" required>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-300 light:text-gray-700">Email</label>
+          <input type="email" id="email" class="input-hover w-full bg-gray-700 light:bg-white border border-gray-600 light:border-gray-300 text-gray-100 light:text-gray-900 p-3 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="example@email.com" required>
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label for="password" class="block mb-2 text-sm font-medium text-gray-300 light:text-gray-700">Password</label>
+          <input type="password" id="password" class="input-hover w-full bg-gray-700 light:bg-white border border-gray-600 light:border-gray-300 text-gray-100 light:text-gray-900 p-3 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="••••••••" required>
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+          <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-300 light:text-gray-700">Confirm Password</label>
+          <input type="password" id="confirm-password" class="input-hover w-full bg-gray-700 light:bg-white border border-gray-600 light:border-gray-300 text-gray-100 light:text-gray-900 p-3 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="••••••••" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-float w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">
+          Sign Up
+        </button>
+      </form>
+
+      <!-- Already have an account -->
+      <p class="text-center text-gray-400 light:text-gray-600">
+        Already have an account?
+        <a href="../login/login.html" class="text-blue-500 hover:underline">Sign In</a>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
