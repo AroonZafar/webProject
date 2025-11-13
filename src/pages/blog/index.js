@@ -196,6 +196,3 @@ document.getElementById('editModal').addEventListener('click', (e) => {
     editModal.classList.add('hidden');
   }
 });
-
-// Expose for debugging
-window._courses = courses;
